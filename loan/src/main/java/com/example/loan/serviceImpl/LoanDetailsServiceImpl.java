@@ -42,7 +42,8 @@ public class LoanDetailsServiceImpl implements LoanDetailsService{
 		LoanResponse response = new LoanResponse();
 		try {
 			LoanDetails loan = loanDetailsRepository.save(loanDetails);
-			LoanProjectLogger.logInfo(getClass(), CommonConstant.LOAN_SAVED);		
+			LoanProjectLogger.logInfo(getClass(), CommonConstant.LOAN_SAVED);
+			paymentScheduleProcess(loan);
 			
 		}catch(Exception e) {
 			LoanProjectLogger.logError(getClass(), CommonConstant.LOAN_PROCESS_FAILED, e);

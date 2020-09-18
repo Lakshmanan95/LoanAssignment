@@ -27,11 +27,5 @@ public class DateAndTimeUtil {
 		return t;
 	}
 	
-	public static void main(String[] args) throws ParseException {
-		Date dat = stringToDate("2020-09-18");
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println(format.parse("2020-09-18"));
-		System.out.println(dat);
-	}
-	
+		
 }

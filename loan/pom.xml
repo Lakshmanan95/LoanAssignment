@@ -12,6 +12,7 @@
 	<artifactId>loan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>loan</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -66,6 +67,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>loan</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
