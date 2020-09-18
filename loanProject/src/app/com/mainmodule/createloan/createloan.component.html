@@ -1,0 +1,104 @@
+
+
+<div class="section section-register">
+    <div class="container">
+        <div class="grid">
+            <div class="grid_row">
+                <div class="grid_col is-12 is-lg-7">
+                    <form #f="ngForm" [formGroup]="loanForm"  method="post" action="#" class="login-form">
+                        <div class="grid">
+                            <div class="grid_row is-30 is-md-40">
+                                <div class="grid_col is-12">
+                                    <h3 class="text-secondary">Add New Loan</h3>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Loan Name <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="loanType" placeholder="Enter your Loan Name ..." 
+                                    id="loanType"   [(ngModel)]="loanDetails.loanType" formControlName="_loanType" minlength="3" required>
+                                    <div *ngIf="loanForm.controls._loanType.touched && loanForm.controls._loanType.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._loanType.errors.required"> Please enter the valid  Name  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._loanType.errors.minlength"> Loan Name should have minimum of 3</div>
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Loan Amount <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="loanAmount" placeholder="Enter your last name ..." 
+                                    id="loanAmount"   [(ngModel)]="loanDetails.loanAmount" formControlName="_loanAmount" pattern="^[0-9]+$" required>
+                                    <div *ngIf="loanForm.controls._loanAmount.touched && loanForm.controls._loanAmount.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._loanAmount.errors.required"> Please enter the valid amount  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._loanAmount.errors.pattern"> Description should have numbers only</div>
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Trade Date<span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="date" name="tradeDate" placeholder="Enter Weight ..."
+                                    id="tradeDate"   [(ngModel)]="loanDetails.tradeDate" formControlName="_tradeDate"   required>
+                                    <div *ngIf="loanForm.controls._tradeDate.touched && loanForm.controls._tradeDate.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._tradeDate.errors.required"> Please select the Trade date  </div>
+                               
+                                        
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Loan Start Date<span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="date" name="loanStartDate" placeholder="Enter Weight ..."
+                                    id="loanStartDate"   [(ngModel)]="loanDetails.loanStartDate" formControlName="_loanStartDate"   required>
+                                    <div *ngIf="loanForm.controls._loanStartDate.touched && loanForm.controls._loanStartDate.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._loanStartDate.errors.required"> Please enter the Loan Start Date </div>
+                                      
+                                        
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Maturity Date<span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="date" name="maturityDate" placeholder="Enter Weight ..."
+                                    id="maturityDate"   [(ngModel)]="loanDetails.maturityDate" formControlName="_maturityDate"   required>
+                                    <div *ngIf="loanForm.controls._maturityDate.touched && loanForm.controls._maturityDate.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._maturityDate.errors.required"> Please enter the Maturity Date  </div>
+                                       
+                                        
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Payment Frequency <span class="form_label_require">*</span></label>
+                                    <select class="form_control_select" name="paymentFrequency" 	id="paymentFrequency"   [(ngModel)]="loanDetails.paymentFrequency" formControlName="_paymentFrequency" required>
+                                        <option value=1>Monthly</option>
+                                        <option value=2>Quarterly</option>
+                                        <option value=3>Half Yearly</option>
+                                        <option value=4>Yearly</option>
+                                    </select>
+                                    <div *ngIf="loanForm.controls._paymentFrequency.touched && loanForm.controls._paymentFrequency.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._paymentFrequency.errors.required"> Please select the Payment Frequncy </div>
+                                     </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Interest<span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="interestRate" placeholder="Enter your last name ..." 
+                                    id="interestRate"   [(ngModel)]="loanDetails.interestRate" formControlName="_interestRate" pattern="^[0-9.]+$" required>
+                                    <div *ngIf="loanForm.controls._interestRate.touched && loanForm.controls._interestRate.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._interestRate.errors.required"> Please enter the valid Interest  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="loanForm.controls._interestRate.errors.pattern"> Interest should have numbers only</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid_col is-12">
+                                    <div class="grid">
+                                        <div class="grid_row is-30 is-md-40">
+                                            <div class="grid_col is-12 is-sm-6">
+                                                <button class="button is-block is-grey" [disabled]="!f.touched && !f.valid" (click)="createLoan()" type="submit">
+                                                    <span class="button_text">Create Loan</span>
+                                                    <!-- <span class="button_icon icon is-next"></span> -->
+                                                </button>
+                                            </div>
+                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

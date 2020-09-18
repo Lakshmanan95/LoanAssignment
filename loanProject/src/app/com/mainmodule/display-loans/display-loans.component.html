@@ -1,0 +1,147 @@
+<div class="panel panel-default">
+    <div class="panel-heading" style="height: 40px;">
+        <div class="row">
+            <div class="col-md-2 col-sm-3 col-xs-4" style="width:15.6666%">
+               <button class="btn btn-primary loan-btn" (click)="createLoan()">Create Loan</button>
+            </div>
+           
+            
+            
+        </div>
+    </div>
+    
+    <div class="panel-body">
+        <div class="header ">
+            <div class="row col-md-10">
+             
+                <div class="col-md-2 col-sm-2">
+                    <h4>Loan Type</h4>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <h4>Amount</h4>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <h4>Interest Rate
+
+                    </h4>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <h4>Loan Start Date</h4>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <h4>Maturiy Date</h4>
+                </div>
+            </div>
+        </div>
+        
+       
+         <div *ngFor="let loan of loanDetails; let i = index "> 
+                             
+            <div class="table-body ">
+                <div class="row col-md-10">
+                   
+                    <div class="col-md-2 col-sm-2">
+                       <a  style="word-wrap: break-word;"> 
+                           <span>{{loan.loanType}} </span>
+                      
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-sm-2">   
+                            <div class="vertical-height">                         
+                                <span >{{loan.loanAmount}}</span>
+                              
+                            </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">                           
+                        <span >{{loan.interestRate}}</span>
+                     
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span>{{loan.loanStartDate}}</span>
+                                       
+                            </div>                     
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="vertical-height">
+                            <span >{{loan.maturityDate}}</span>
+                          
+                        </div>                     
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="vertical-height">
+                            <button class="btn btn-primary" (click)="getPaymentSchedule(loan.id)">Payment Schedule</button>
+                        
+                        </div>                     
+                    </div>
+                   
+                </div>
+                <div *ngIf="scheduleId == loan.id && paymentSchedule.length > 0">
+                        <div class="row col-md-10 schedule">                                
+                                   <div class="col-md-2 col-sm-2">
+                                       <h4>Payment Date</h4>
+                                   </div>
+                                   <div class="col-md-2 col-sm-2">
+                                       <h4>Projected Interest </h4>
+                                   </div>
+                                   <div class="col-md-2 col-sm-2">
+                                       <h4>Principal </h4>
+                                   </div>
+                                  
+                                   <div class="col-md-2 col-sm-2">
+                                       <h4>Payment Amount</h4>
+                                   </div>
+                                   <div class="col-md-2 col-sm-2">
+                                        <h4>Payment</h4>
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2">
+                                         <h4>PaymentStatus</h4>
+                                    </div>
+                               </div>
+                    <div *ngFor="let x of paymentSchedule" class="row col-md-10 scheduleList">
+                        <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span >{{x.paymentDate}}</span>                              
+                            </div>                     
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span >{{x.projectedInterest}}</span>
+                            </div>                     
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span >{{x.principal}}</span>  
+                             </div>                     
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span >{{x.paymentAmount}}</span>
+                              
+                            </div>                     
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <div class="vertical-height">
+                                <span >{{x.payment}}</span>                                  
+                            </div>                     
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                                <div class="vertical-height">
+                                     <span >{{x.paymentStatus}}</span>
+                                </div>                     
+                            </div>
+                        <hr>
+                    </div>
+                </div>
+
+            </div>
+                             
+                             
+
+         <!-- </div>  -->
+
+    </div>
+</div>
+

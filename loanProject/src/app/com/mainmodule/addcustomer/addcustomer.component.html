@@ -1,0 +1,73 @@
+
+<div class="section section-register">
+    <div class="container">
+        <div class="grid">
+            <div class="grid_row">
+                <div class="grid_col is-12 is-lg-7">
+                    <form #f="ngForm" [formGroup]="customerForm"  method="post" action="#" class="login-form">
+                        <div class="grid">
+                            <div class="grid_row is-30 is-md-40">
+                                <div class="grid_col is-12">
+                                    <h3 class="text-secondary">Add Customer</h3>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Customer Name <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="customerName" placeholder="Enter your customer Name ..." 
+                                    id="customerName"   [(ngModel)]="customer.customerName" formControlName="_customerName" minlength="3" required>
+                                    <div *ngIf="customerForm.controls._customerName.touched && customerForm.controls._customerName.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._customerName.errors.required"> Please enter the valid  Name  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._customerName.errors.minlength"> customer Name should have minimum of 3</div>
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Email Id <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="emailId" placeholder="Enter your last name ..." 
+                                    id="emailId"   [(ngModel)]="customer.emailId" formControlName="_emailId" pattern="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" required>
+                                    <div *ngIf="customerForm.controls._emailId.touched && customerForm.controls._emailId.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._emailId.errors.required"> Please enter the valid Email  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._emailId.errors.pattern"> Description should have abc@xyz.com</div>
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Phone Number <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="phoneNumber" placeholder="Enter Weight ..."
+                                    id="phoneNumber"   [(ngModel)]="customer.phoneNumber" formControlName="_phoneNumber" maxlength="10" minlength="10" pattern="^[0-9]+$"  required>
+                                    <div *ngIf="customerForm.controls._phoneNumber.touched && customerForm.controls._phoneNumber.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._phoneNumber.errors.required"> Please enter the valid number  </div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._phoneNumber.errors.pattern"> Should be  number</div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._phoneNumber.errors.minlength"> Length of 10</div>
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._phoneNumber.errors.maxlength"> Maximum length of 10</div>
+                                    </div>
+                                </div>
+                                <div class="grid_col is-12 is-sm-6">
+                                    <label class="form_label">Salary <span class="form_label_require">*</span></label>
+                                    <input class="form_control_input" type="text" name="salary" placeholder="Enter the price..."
+                                    id="salary"   [(ngModel)]="customer.salary" formControlName="_salary" validateEqual="_salary"   required>
+                                    <div *ngIf="customerForm.controls._salary.touched && customerForm.controls._salary.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="customerForm.controls._salary.errors.required"> Please enter the price </div>
+                                     </div>
+                                </div>
+                                
+                                
+                                <div class="grid_col is-12">
+                                    <div class="grid">
+                                        <div class="grid_row is-30 is-md-40">
+                                            <div class="grid_col is-12 is-sm-6">
+                                                <button class="button is-block is-grey" [disabled]="!f.touched && !f.valid" (click)="addcustomer()" type="submit">
+                                                    <span class="button_text">Add Customer</span>
+                                                    <!-- <span class="button_icon icon is-next"></span> -->
+                                                </button>
+                                            </div>
+                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Section Register End -->

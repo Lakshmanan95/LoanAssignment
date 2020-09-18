@@ -1,0 +1,38 @@
+.table-body{
+    border: 1px solid #cdcbcb;
+    padding-top: 5px;
+    background-color: white;
+}
+
+.btn-primary{
+    width: max-content;
+    padding: 3px;
+    margin: 3px;
+}
+.panel-default {
+    margin: 50px;
+}
+.header{
+    background-color: #141498;
+    color: white;
+    padding: 5px;
+}
+
+h4{
+    color: white;
+}
+.schedule{
+    background-color: #141498;
+    margin: 10px;
+    padding: 5px;
+}
+.scheduleList{
+    margin: 10px;
+}
+.vertical-height{
+    font-size: initial;
+}
+.loan-btn{
+    background-color: #e69808;
+    border-color: orange;
+}
